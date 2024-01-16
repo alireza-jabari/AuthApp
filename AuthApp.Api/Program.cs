@@ -27,15 +27,21 @@ builder.Services.AddAuthentication(options=>{
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "your_issuer",
-        ValidAudience = "your_audience",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_secret_key"))
+        ValidIssuer = "alireza-jabari",
+
+        RequireExpirationTime=true,
+        ClockSkew=TimeSpan.Zero,
+        ValidAudience = "alireza-jabari",
+        // todo : get secret key from appsettings.json
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("hello secret key alireza klahsdjf ljkahsdjfklj alksdjfkla jsdklfjlashdflasdf"))
     };
 });
 
 builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -47,8 +53,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-app.UseAuthentication();
-app.UseAuthorization();
 
 var summaries = new[]
 {

@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -47,6 +48,8 @@ public class AuthController:ControllerBase
 
     private string CreateToken(UserDto user)
     {
+        System.Console.WriteLine(DateTime.Now);
+        System.Console.WriteLine(DateTime.Now.AddSeconds(10));
         List<Claim> claims=new List<Claim>{
             new(ClaimTypes.Name,user.Username)
         };
@@ -54,10 +57,22 @@ public class AuthController:ControllerBase
         var credentials=new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
         var token=new JwtSecurityToken(
             claims:claims,
-            expires:DateTime.Now.AddDays(1),
-            signingCredentials:credentials
+            expires:DateTime.Now.AddSeconds(5),
+            signingCredentials:credentials,
+            issuer:"alireza-jabari",
+            audience:"alireza-jabari"
         );
         var jwt=new JwtSecurityTokenHandler().WriteToken(token);
         return jwt;
+    }
+
+
+
+    [Authorize]
+    [HttpGet("getData")]
+    public string GetData()
+    {
+        Console.WriteLine(DateTime.Now);
+        return "data";
     }
 }
