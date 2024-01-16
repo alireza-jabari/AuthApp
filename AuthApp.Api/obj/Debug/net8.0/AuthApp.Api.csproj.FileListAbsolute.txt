@@ -137,3 +137,8 @@ C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\runtimes\
 C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\obj\Debug\net8.0\AuthApp.Api.sourcelink.json
 C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
