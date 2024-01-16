@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthApp.Controllers;
@@ -13,6 +14,8 @@ public class UserController:ControllerBase
         }
 
 
+
+        [Authorize]
         [HttpGet("getusers")]
         public List<User> GetUsers()
         {
