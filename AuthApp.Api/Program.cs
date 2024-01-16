@@ -1,5 +1,6 @@
 using System.Text;
 using AuthApp;
+using AuthApp.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -11,6 +12,8 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// method 3 middleware :A
+builder.Services.AddTransient<MiddlewareMethodThree>();
 
 
 //jwt 
@@ -66,6 +69,43 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+
+
+
+
+//use middleware method two
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+#region customMiddlewareFirstMethod
+app.Use(async(context,next)=>{
+
+    try
+    {
+            Console.WriteLine("hhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+        
+        await next(context);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("++++++++++++++++11111111111111111+++++++++++++++");
+        context.Response.StatusCode=500;
+        await next(context);
+    }
+});
+#endregion
+
+
+
+
+// method 3 middleware :B
+app.UseMiddleware<MiddlewareMethodThree>();
+
+
+
+
+
+
 
 app.MapControllers();
 app.Run();
