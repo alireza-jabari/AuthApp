@@ -36,12 +36,18 @@ public class AuthController:ControllerBase
     public string Login([FromBody] UserDto user)
     {
 
-        //check user exist
+        //todo check user exist
 
-        //validate user pass
+        //todo validate user pass
 
-        //generate token
+        //todo generate access token
         string token=CreateToken(user);
+
+        //todo generate refresh token
+
+        //todo save in db
+
+        //todo : send refresh token in http only cookie and access token in reponse to client
         return token;
     }
 
@@ -57,7 +63,7 @@ public class AuthController:ControllerBase
         var credentials=new SigningCredentials(key,SecurityAlgorithms.HmacSha512Signature);
         var token=new JwtSecurityToken(
             claims:claims,
-            expires:DateTime.Now.AddSeconds(5),
+            expires:DateTime.Now.AddSeconds(10),
             signingCredentials:credentials,
             issuer:"alireza-jabari",
             audience:"alireza-jabari"
@@ -74,5 +80,15 @@ public class AuthController:ControllerBase
     {
         Console.WriteLine(DateTime.Now);
         return "data";
+    }
+
+
+
+    [HttpPost("RefreshToken")]
+    public async Task<IActionResult> RefreshToken()
+    {
+        var jwtTokenHandler=new JwtSecurityTokenHandler();
+        // jwtTokenHandler.ValidateToken();
+        return Ok();
     }
 }

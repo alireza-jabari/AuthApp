@@ -17,12 +17,9 @@ builder.Services.AddTransient<MiddlewareMethodThree>();
 
 
 //jwt 
-builder.Services.AddAuthentication(options=>{
-    options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options=>{
-    options.TokenValidationParameters=new TokenValidationParameters
-    {
+
+var tokenValidationParameters=new TokenValidationParameters()
+{
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
@@ -34,7 +31,17 @@ builder.Services.AddAuthentication(options=>{
         ValidAudience = "alireza-jabari",
         // todo : get secret key from appsettings.json
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("hello secret key alireza klahsdjf ljkahsdjfklj alksdjfkla jsdklfjlashdflasdf"))
-    };
+
+};
+
+
+builder.Services.AddAuthentication(options=>{
+    options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme=JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options=>{
+    options.SaveToken=true;
+    options.TokenValidationParameters=tokenValidationParameters;
 });
 
 builder.Services.AddDbContext<AppDbContext>();
