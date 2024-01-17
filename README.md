@@ -5,6 +5,7 @@
     - 4.System.IdentityModel.Tokens.Jwt
     - 5.BCrypt.Net-Next
     - 6.Microsoft.AspNetCore.Mvc.NewtonsoftJson
+    - 7.MediatR
 
 - Patterns :
     - Repository Pattern
