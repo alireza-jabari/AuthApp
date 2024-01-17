@@ -39,6 +39,11 @@ builder.Services.AddAuthentication(options=>{
 
 builder.Services.AddDbContext<AppDbContext>();
 
+
+//step one -> install mediatR
+//step two mediatR ->Inject mediatR to our DI
+builder.Services.AddMediatR(config=>config.RegisterServicesFromAssemblies(typeof(Program).Assembly));
+
 var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();

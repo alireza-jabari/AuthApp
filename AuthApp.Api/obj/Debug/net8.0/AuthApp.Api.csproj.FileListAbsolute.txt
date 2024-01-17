@@ -142,3 +142,5 @@ C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Microsoft
 C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\MediatR.dll
+C:\Users\AlirezA\Desktop\Projects\AuthApp\AuthApp.Api\bin\Debug\net8.0\MediatR.Contracts.dll

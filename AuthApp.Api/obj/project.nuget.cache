@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cZi6r4P9tZwCkEOzeq66s2nJ3CjpxAvxJl029gJqXSlA8Mokcw6V7PYOw+03KJMSHGWcwSCP+LA7JiDFw7phRA==",
+  "dgSpecHash": "Ba73Xiv4aTjoajAsAGoHOAOzBocQCm9mJPfIkikaFV3stOh2NNIpltN1jTdUGo0xK2F1YNNRyeb69I8m61FTRw==",
   "success": true,
   "projectFilePath": "C:\\Users\\AlirezA\\Desktop\\Projects\\AuthApp\\AuthApp.Api\\AuthApp.Api.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\AlirezA\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\AlirezA\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\AlirezA\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\AlirezA\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\AlirezA\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\AlirezA\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.1\\microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
     "C:\\Users\\AlirezA\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.1\\microsoft.aspnetcore.jsonpatch.8.0.1.nupkg.sha512",
     "C:\\Users\\AlirezA\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.1\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.1.nupkg.sha512",
