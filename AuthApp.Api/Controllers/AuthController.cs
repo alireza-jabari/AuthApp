@@ -14,6 +14,7 @@ public class UserDto
 }
 
 
+[PersianName("کنترلر سوم")]
 [ApiController]
 public class AuthController:ControllerBase
 {

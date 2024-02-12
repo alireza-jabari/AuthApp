@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthApp.Controllers;
 
+
+[PersianName("کنترلر دوم")]
 [ApiController]
 public class CustomerController:ControllerBase
 {

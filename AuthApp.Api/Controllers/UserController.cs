@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,8 @@ public class RespoonseDto
     public string? Message { get; set; }
 }
 
+
+[PersianName("کنترلر اول")]
 [ApiController]
 public class UserController:ControllerBase
 {
@@ -40,5 +43,18 @@ public class UserController:ControllerBase
                 throw new Exception("user not found !!!!!!");
                 // return NotFound("user not found");
             }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("Reflection")]
+        public IActionResult TestReflection(){
+            var controllerType=Assembly.GetExecutingAssembly().GetTypes().Where(type=>typeof(ControllerBase).IsAssignableFrom(type) && !type.IsAbstract);
+            // var controllerNames = controllerType.Select(type => type.Name.Replace("Controller", ""));
+            var controllerNames = controllerType.Select(type =>
+            {
+                var attribute = type.GetCustomAttribute<PersianNameAttribute>();
+                return attribute != null ? attribute.Name : type.Name.Replace("Controller", "");
+            });
+            return Ok(controllerNames);
         }
 }
